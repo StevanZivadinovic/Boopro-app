@@ -1,9 +1,5 @@
 import React from 'react';
 import Row from '../components/Row/Row.js';
-
-// @ts-ignore
-// import Row from '../../components/Row/Row.js';
-// @ts-ignore
 import requests from './../helperFunctions/requests.js';
 
 
