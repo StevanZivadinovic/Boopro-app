@@ -16,7 +16,7 @@ console.log(user)
       setErr("");
       navigate("/");
     } catch (err) {
-      setErr(err.message);
+    //   setErr(err);
       console.log(err);
     }
   };

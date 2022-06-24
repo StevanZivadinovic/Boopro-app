@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import { AuthContextProvider } from "./components/AuthContex/AuthContext";
+import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
 
@@ -12,10 +13,10 @@ function App() {
       <AuthContextProvider>
       <Router>
     
+      <Navbar />
         <Routes>
          <Route path="/" element={<HomePage />}></Route>
-         <Route path="login" element={<LoginPage />}></Route> 
-
+         <Route path="/login" element={<LoginPage />}></Route> 
         </Routes>
         
       </Router>
