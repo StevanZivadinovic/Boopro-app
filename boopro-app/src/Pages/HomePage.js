@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Row from '../components/Row/Row.js';
-import requests from './../helperFunctions/requests.js';
 import {db} from '../config/Firebase.js';
-import {updateDoc, doc, onSnapshot} from 'firebase/firestore';
+import { doc, onSnapshot} from 'firebase/firestore';
 import { key } from './../helperFunctions/requests.js';
 
 const HomePage = () => {
