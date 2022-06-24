@@ -40,11 +40,10 @@ const Movie = ({ item, tab, IDRow }) => {
       }
     }
     else if (e.key == "ArrowDown" && activeEle.parentElement.parentElement.nextElementSibling) {
-      console.log(e.target.dataset, e.target.dataset)
       let parent = activeEle.parentElement.parentElement.children[2].children;
       activeEle.parentElement.parentElement.nextElementSibling.children[2].children[Array.from(parent).indexOf(activeEle)].focus();
     }
-    else if (e.key == "ArrowUp" && activeEle.parentElement.parentElement.previousElementSibling) {
+    else if (e.key == "ArrowUp" && activeEle.parentElement.parentElement.previousElementSibling.children[2]) {
       let parent = activeEle.parentElement.parentElement.children[2].children;
       activeEle.parentElement.parentElement.previousElementSibling.children[2].children[Array.from(parent).indexOf(activeEle)].focus()
 
