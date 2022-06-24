@@ -8,7 +8,7 @@ const LoginPage = () => {
   const [err, setErr] = useState("");
   const { user, logIn } = User();
   const navigate = useNavigate();
-
+console.log(user)
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
