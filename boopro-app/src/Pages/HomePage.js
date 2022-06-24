@@ -13,7 +13,8 @@ const HomePage = () => {
         setMovies(doc.data()?.genres);
     })
   }, [])
-  console.log(movies);
+
+
   return (
     <>
     {

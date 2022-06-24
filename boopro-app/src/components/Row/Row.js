@@ -13,6 +13,15 @@ import './../Row/row.css'
 const Row = ({ title, requestURL, IDRow }) => {
   const [movies, setMovies] = useState([]);
 
+
+  useEffect(() => {
+    if(movies.length>0){
+      Array.from(document.querySelectorAll('.movie'))[0].focus()
+    }
+  
+  }, [movies])
+  
+
   useEffect(() => {
     axios.get(requestURL).then((res) => {
       setMovies(res.data.results);
@@ -42,9 +51,9 @@ const Row = ({ title, requestURL, IDRow }) => {
         <div
           id={"slider" + IDRow}
           className="w-full scroll-smooth whitespace-nowrap overflow-x-scroll relative scrollbar-hide"
-        >
+        > 
           {movies.map((item, i) => {
-            return <Movie item={item} key={i} tab={i}></Movie>;
+            return <Movie item={item} key={i} tab={i} IDRow={IDRow}></Movie>;
           })}
         </div>
         <MdChevronRight
