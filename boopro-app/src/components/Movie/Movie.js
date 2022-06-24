@@ -17,7 +17,6 @@ const Movie = ({ item, tab, IDRow }) => {
 
   const saveShow = (e) => {
     const activeEle = document.activeElement;
-    console.log(window)
 
     if (e.key === "Enter") {
       alert(`title:${item.title},

@@ -39,7 +39,7 @@ const Row = ({ title, requestURL, IDRow }) => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center group" tabIndex={0}>
+      <div className="relative flex flex-col items-center group">
         <MdChevronLeft
           onClick={moveLeft}
           size={40}
