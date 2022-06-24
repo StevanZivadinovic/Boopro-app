@@ -17,6 +17,7 @@ const Movie = ({ item, tab, IDRow }) => {
 
   const saveShow = (e) => {
     const activeEle = document.activeElement;
+    console.log(window)
 
     if (e.key === "Enter") {
       alert(`title:${item.title},
@@ -39,18 +40,22 @@ const Movie = ({ item, tab, IDRow }) => {
       
       }
     }
-    else if (e.key == "ArrowDown") {
-      activeEle.previousElementSibling.focus();
+    else if (e.key == "ArrowDown" && activeEle.parentElement.parentElement.nextElementSibling) {
+      console.log(e.target.dataset, e.target.dataset)
+      let parent = activeEle.parentElement.parentElement.children[2].children;
+      activeEle.parentElement.parentElement.nextElementSibling.children[2].children[Array.from(parent).indexOf(activeEle)].focus();
     }
-    else if (e.key == "ArrowUp") {
-      activeEle.nextElementSibling.focus();
+    else if (e.key == "ArrowUp" && activeEle.parentElement.parentElement.previousElementSibling) {
+      let parent = activeEle.parentElement.parentElement.children[2].children;
+      activeEle.parentElement.parentElement.previousElementSibling.children[2].children[Array.from(parent).indexOf(activeEle)].focus()
+
     }
   };
   return (
     <div
       onKeyDown={(e) => saveShow(e)}
       className="w-[16.67%] inline-block cursor-pointer relative p-2 movie"
-      tabIndex={-1}
+      tabIndex={0}
     >
       <img
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}

@@ -39,7 +39,7 @@ const Row = ({ title, requestURL, IDRow }) => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center group">
+      <div className="relative flex flex-col items-center group" tabIndex={0}>
         <MdChevronLeft
           onClick={moveLeft}
           size={40}
@@ -51,6 +51,7 @@ const Row = ({ title, requestURL, IDRow }) => {
         <div
           id={"slider" + IDRow}
           className="w-full scroll-smooth whitespace-nowrap overflow-x-scroll relative scrollbar-hide"
+          tabIndex={0}
         > 
           {movies.map((item, i) => {
             return <Movie item={item} key={i} tab={i} IDRow={IDRow}></Movie>;
