@@ -16,8 +16,8 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex items-center justify-end p-4  w-full z-[10000]'>
-   
+    <div className='flex items-center justify-between p-4  w-full z-[10000]'>
+       <Link to='/'><h1 className='text-red-600 text-4xl font-bold cursor-pointer'>Boopro - list movies -ReactJS </h1></Link>
     <div>
     
   {user?.email ? 
