@@ -55,23 +55,7 @@ const LoginPage = () => {
               <button className="bg-red-600 text-3xl rounded my-5 py-5 font-bold">
                 Sign In
               </button>
-              <div className="flex justify-between text-gray-500">
-                <p className="items-center flex">
-                  <input type="checkbox" name="remember" id="remember" />
-                  <span className="ml-2 text-3xl">Remember me</span>
-                </p>
-                <p className="text-3xl cursor-pointer">Need Help?</p>
-              </div>
-              <div>
-                <p className="mt-10 text-gray-500 text-3xl flex justify-between">
-                  New to Netflix?
-                  <Link to="/signup">
-                    <span className="ml-2 text-3xl text-gray-100 font-bold cursor-pointer">
-                      Sign up
-                    </span>
-                  </Link>
-                </p>
-              </div>
+           
             </form>
           </div>
         </div>
