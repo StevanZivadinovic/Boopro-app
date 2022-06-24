@@ -3,6 +3,7 @@ import axios from "axios";
 import React, {useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import Movie from "../Movie/Movie";
+import './../Row/row.css'
 
 
 
@@ -43,7 +44,7 @@ const Row = ({ title, requestURL, IDRow }) => {
           className="w-full scroll-smooth whitespace-nowrap overflow-x-scroll relative scrollbar-hide"
         >
           {movies.map((item, i) => {
-            return <Movie item={item} key={i}></Movie>;
+            return <Movie item={item} key={i} tab={i}></Movie>;
           })}
         </div>
         <MdChevronRight
