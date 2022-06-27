@@ -52,7 +52,7 @@ const Movie = ({ item, tab, IDRow }) => {
   return (
     <div
       onKeyDown={(e) => saveShow(e)}
-      className="w-[16.67%] inline-block cursor-pointer relative p-2 movie"
+      className="sm:w-[25%] md:lg:w-[16.67%] inline-block cursor-pointer relative p-2 movie w-[33.33%]"
       tabIndex={0}
     >
       <img
