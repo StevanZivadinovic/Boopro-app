@@ -1,4 +1,8 @@
-div:focus{
+div.movie:focus{
     border: 1px solid red;
     outline: none;
+}
+
+div.movie:focus .titleBelowMovie{
+    display: block;
 }

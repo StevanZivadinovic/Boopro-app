@@ -3,17 +3,6 @@ import React, {useState } from "react";
 
 const Movie = ({ item, tab, IDRow }) => {
 
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-  
 
   const saveShow = (e) => {
     const activeEle = document.activeElement;
@@ -27,17 +16,11 @@ const Movie = ({ item, tab, IDRow }) => {
     if (e.key == "ArrowLeft" && activeEle.previousElementSibling) {
     
       activeEle.previousElementSibling.focus();
-      if(!isInViewport(document.activeElement)){
      
-       
-      }
      
     } else if (e.key == "ArrowRight" && activeEle.nextElementSibling) {
       activeEle.nextElementSibling.focus();
-      if(!isInViewport(document.activeElement)){
-       
       
-      }
     }
     else if (e.key == "ArrowDown" && activeEle.parentElement.parentElement.nextElementSibling) {
       let parent = activeEle.parentElement.parentElement.children[2].children;
@@ -52,7 +35,7 @@ const Movie = ({ item, tab, IDRow }) => {
   return (
     <div
       onKeyDown={(e) => saveShow(e)}
-      className="sm:w-[25%] md:lg:w-[16.67%] inline-block cursor-pointer relative p-2 movie w-[33.33%]"
+      className="sm:w-[25%] md:lg:w-[16.67%]   inline-block cursor-pointer relative p-2 movie w-[33.33%]"
       tabIndex={0}
     >
       <img
@@ -63,6 +46,7 @@ const Movie = ({ item, tab, IDRow }) => {
         <p className="text-3xl font-bold text-center">{item.title}</p>
         <p className="absolute top-4 left-4 text-gray-300"></p>
       </div>
+        <p className="text-[15px] text-white font-bold text-center hidden titleBelowMovie">{item.title}</p>
     </div>
   );
 };
