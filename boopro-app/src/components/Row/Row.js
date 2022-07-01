@@ -1,25 +1,17 @@
 import axios from "axios";
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import Movie from "../Movie/Movie";
-import './../Row/row.css'
-
-
-
-
-
+import "./../Row/_row.css";
 
 const Row = ({ title, requestURL, IDRow }) => {
   const [movies, setMovies] = useState([]);
 
-
   useEffect(() => {
-    if(movies.length>0){
-      Array.from(document.querySelectorAll('.movie'))[0].focus()
+    if (movies.length > 0) {
+      Array.from(document.querySelectorAll(".movie"))[0].focus();
     }
-  
-  }, [movies])
-  
+  }, [movies]);
 
   useEffect(() => {
     axios.get(requestURL).then((res) => {
@@ -51,7 +43,7 @@ const Row = ({ title, requestURL, IDRow }) => {
           id={"slider" + IDRow}
           className="w-full scroll-smooth whitespace-nowrap overflow-x-scroll relative scrollbar-hide"
           tabIndex={0}
-        > 
+        >
           {movies.map((item, i) => {
             return <Movie item={item} key={i} tab={i} IDRow={IDRow}></Movie>;
           })}
